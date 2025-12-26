@@ -1,0 +1,5 @@
+{
+  "name": "Calculateur CCA - Réglementation Marocaine",
+  "description": "Une application professionnelle pour le calcul des intérêts d'un Compte Courant d'Associé (CCA) conformément à la réglementation fiscale marocaine (IS, RAS, TVA).",
+  "requestFramePermissions": []
+}
