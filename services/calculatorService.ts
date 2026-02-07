@@ -342,7 +342,7 @@ export const exportMonthlyToExcel = (accruals: MonthlyAccrual[], summary: Financ
   // 1. Sheet "Paramètres"
   const summaryData = [
     ["CONFIGURATION ACCRUE MENSUELLE"],
-    ["Taux TVA (%)", config.annualRate], // Wait, config sheet should have TVA separately
+    ["Taux Annuel (%)", config.annualRate],
     ["Taux TVA (%)", config.tvaRate],
     ["Total Intérêts HT", summary.totalInterestHT],
     ["Total TVA", summary.totalTVA],
