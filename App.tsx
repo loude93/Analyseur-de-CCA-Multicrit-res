@@ -12,7 +12,6 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend,
   LineChart, Line
 } from 'recharts';
-import { GoogleGenAI } from "@google/genai";
 
 import { CCAPeriod, CCAConfig, CalculationResult, FinancialSummary, SavedScenario, PersonType, CalculationBase } from './types';
 import { DEFAULT_CONFIG, MONTHS_FR } from './constants';
@@ -472,7 +471,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             <MetricCard label={t("Capital Total", "إجمالي رأس المال")} value={summary.totalCapital} color="slate" />
             <MetricCard label={t("Intérêts HT", "الفوائد الصافية")} value={summary.totalInterestHT} color="blue" />
-            <MetricCard label={t("TVA (10%)", "الضريبة")} value={summary.totalTVA} color="indigo" />
+            <MetricCard label={t(`TVA (${tvaRate}%)`, `الضريبة (${tvaRate}%)`)} value={summary.totalTVA} color="indigo" />
             <MetricCard label={t("RAS Total", "إجمالي الاقتطاع")} value={summary.totalRAS} color="rose" />
             <MetricCard label={t("Net Final", "صافي الدفع")} value={summary.netTotal} color="emerald" />
             <MetricCard label={t("Remboursement", "مبلغ السداد")} value={summary.totalRepayment} color="cyan" />
@@ -624,7 +623,7 @@ const App: React.FC = () => {
                         <th className="px-6 py-4 sticky left-0 bg-gray-50 shadow-[2px_0_5px_rgba(0,0,0,0.03)]">{t("Mois / Année", "الشهر / السنة")}</th>
                         <th className="px-6 py-4">{t("Capital Actif", "رأس المال النشط")}</th>
                         <th className="px-6 py-4">{t("Intérêts HT", "الفوائد الصافية")}</th>
-                        <th className="px-6 py-4">{t("TVA (10%)", "الضريبة")}</th>
+                        <th className="px-6 py-4">{t(`TVA (${tvaRate}%)`, `الضريبة (${tvaRate}%)`)}</th>
                         <th className="px-6 py-4">{t("RAS Retenue", "الاقتطاع")}</th>
                         <th className="px-6 py-4 bg-emerald-50 text-emerald-700 font-extrabold">{t("Net du Mois", "صافي الشهر")}</th>
                       </tr>
