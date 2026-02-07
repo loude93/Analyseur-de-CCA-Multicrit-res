@@ -16,11 +16,22 @@ npm install
 ```
 
 ## Lancer en développement
+
+### 1) Démarrer le backend
 ```bash
-npm run dev
+npm run dev:backend
 ```
 
-Par défaut, Vite démarre sur `http://localhost:3000`.
+Backend par défaut: `http://localhost:4000`.
+
+### 2) Démarrer le frontend
+```bash
+npm run dev:frontend
+```
+
+Frontend par défaut: `http://localhost:3000`.
+
+Le frontend proxifie automatiquement `/api/*` vers le backend (`:4000`).
 
 ## Build de production
 ```bash
@@ -29,5 +40,5 @@ npm run preview
 ```
 
 ## Notes
-- La configuration Vite expose actuellement `GEMINI_API_KEY` au front (`process.env.*`).
-- Pour un usage production, privilégier un proxy/backend pour les appels IA sensibles.
+- L'API Google Gemini est supprimée du projet.
+- Le backend expose actuellement `GET /api/health`.
